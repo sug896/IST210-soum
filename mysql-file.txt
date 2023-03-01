@@ -1,0 +1,3 @@
+SELECT patients.patient_id, patients.first_name, 
+patients.city FROM patients WHERE patients.city = 'Barrie';
+
