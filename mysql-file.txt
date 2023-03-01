@@ -1,4 +1,5 @@
 SELECT patients.patient_id, patients.first_name, 
 patients.allergies, patients.city FROM patients 
-WHERE patients.city = 'Barrie' 
+WHERE (patients.city = 'Barrie' OR patients.city = 'Hamilton')
 AND patients.allergies IS NOT null;
+
