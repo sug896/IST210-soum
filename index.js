@@ -14,14 +14,14 @@ var connecttion = mysql.createConnection({
     port: 8889
 })
 var query1 = 'SELECT * FROM student';
-var query2 = 'INSERT INTO `student` (`fName`, `lName`, `StudentID`, `email`) VALUES ("sally", "smith", "0000003", "sally896@psu.edu")';
+//var query2 = 'INSERT INTO `student` (`fName`, `lName`, `StudentID`, `email`) VALUES ("sally", "smith", "0000003", "sally896@psu.edu")';
 connecttion.connect();
 
 app.post('/createuser', function(request, res, next){
     var profile = request.body;
     var query = 'INSERT INTO `student` (`fName`, `lName`, `StudentID`, `email`) VALUES'; 
     query += '('+profile.fName+', ' + profile.lName +', "0000003", "sally896@psu.edu")';
-    connecttion.query(query2, function(error, response, fields){
+    connecttion.query(query, function(error, response, fields){
     if (error) throw error;
         res.send(response);
     })
