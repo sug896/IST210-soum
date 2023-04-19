@@ -18,7 +18,9 @@ var query2 = 'INSERT INTO `student` (`fName`, `lName`, `StudentID`, `email`) VAL
 connecttion.connect();
 
 app.post('/createuser', function(request, res, next){
-    var profile = JSON.parse(request.body);
+    console.log(request.body)
+    
+    var profile = request.body;
     var query = 'INSERT INTO `student` (`fName`, `lName`, `StudentID`, `email`) VALUES'; 
     query += '('+profile.fName+', ' + profile.lName +', "0000003", "sally896@psu.edu")';
     connecttion.query(query2, function(error, response, fields){
